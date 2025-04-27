@@ -1,0 +1,21 @@
+<h1>
+    Task2 - Dynamic Element Creation
+</h1>
+
+<div id="wrapper">
+    <button id="helloButton">Add Hello</button>
+    <div id="container"></div>
+</div>
+
+<script>
+    document.getElementById("helloButton").addEventListener("click", function () {
+        // Create a new element
+        const newElement = document.createElement("p");
+        // Add content to the new element
+        newElement.textContent = "Hello, this is a dynamically created element!";
+        // Append the new element to the container
+        document.getElementById("container").appendChild(newElement);
+    });
+</script>
+
+
