@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOOKSMIMI</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <h1 class="h1">Booksmimi</h1>
+    </div>
+
+    <div class="container">
+      <div class="book-container">
+        <h2 style="margin-bottom: 10px;">Rich Dad Poor Dad</h2>
+        <h3 style="margin-bottom: 10px;">Robert</h3>
+        <p style="margin-bottom: 10px;"></p>
+          Rich Dad Poor Dad is a personal finance book written by Robert
+          Kiyosaki. It contrasts the financial philosophies of Kiyosaki's two
+          "dads": his biological father (the "poor dad") and the father of his
+          best friend (the "rich dad"). The book emphasizes the importance of
+          financial education, investing, and entrepreneurship.
+        </p>
+        <button onclick="deleteBook(event)">Delete</button>
+      </div>
+    </div>
+
+    <div class="popup-overlay"></div>
+    <div class="popup-box" style="display: none">
+      <h2>Add Book</h2>
+      <form id="book-form">
+        <input type="text" id="book-title-input" placeholder="Book Title" required/>
+        <input type="text" id="book-author-input" placeholder="Book Author" required />
+        <textarea id="book-description-input" placeholder="Short Description" required ></textarea>
+        <button type="submit" id="add-book">ADD</button>
+        <button type="button" id="cancel-popup">CANCEL</button>
+      </form>
+    </div>
+
+    <button class="add-button" id="add-popup-button">+</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

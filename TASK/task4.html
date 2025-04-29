@@ -1,0 +1,10 @@
+<h1 id="displayText">Click a button</h1>
+<button onclick="updateText(this)">Button 1</button>
+<button onclick="updateText(this)">Button 2</button>
+<button onclick="updateText(this)">Button 3</button>
+
+<script>
+    function updateText(button) {
+        document.getElementById('displayText').innerText = button.innerText;
+    }
+</script>

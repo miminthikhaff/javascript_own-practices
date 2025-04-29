@@ -1,0 +1,120 @@
+<!-- What is innerHTML?
+innerHTMÜ is a property in JavaScript that allows you to access
+or modify the HTML content of an element in the Document
+Object Model (DOM). It is primarily used to retrieve or set the
+HTML content inside an HTML element. -->
+
+
+<div class="todo-container">
+    <h2 class="todo-title">My To-Do List</h2>
+    <div class="todo-input-container">
+        <input type="text" id="todo-input" placeholder="Add a new task..." />
+        <button id="add-task-btn">Add</button>
+    </div>
+    <ul id="todo-list" class="todo-list"></ul>
+</div>
+
+<style>
+    .todo-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        font-family: Arial, sans-serif;
+    }
+
+    .todo-title {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .todo-input-container {
+        display: flex;
+        gap: 10px;
+    }
+
+    #todo-input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    #add-task-btn {
+        padding: 10px 15px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    #add-task-btn:hover {
+        background: #0056b3;
+    }
+
+    .todo-list {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .todo-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 10px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .todo-list li button {
+        background: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .todo-list li button:hover {
+        background: #a71d2a;
+    }
+</style>
+
+<script>
+    const input = document.getElementById('todo-input');
+    const addTaskBtn = document.getElementById('add-task-btn');
+    const todoList = document.getElementById('todo-list');
+
+    addTaskBtn.addEventListener('click', () => {
+        const taskText = input.value.trim();
+        if (taskText) {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <span>${taskText}</span>
+                <button class="delete-btn">Delete</button>
+            `;
+            todoList.appendChild(li);
+            input.value = '';
+
+            li.querySelector('.delete-btn').addEventListener('click', () => {
+                li.remove();
+            });
+        }
+    });
+
+    input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            addTaskBtn.click();
+        }
+    });
+</script>
