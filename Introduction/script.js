@@ -1,3 +1,26 @@
+/**
+ * Data Types in JavaScript
+ * -------------------------
+ * JavaScript is a dynamically typed language, meaning variables can hold different types of data at different times.
+ *
+ * 1. **Primitive Data Types**:
+ *    - `undefined`: A variable that has been declared but not assigned a value.
+ *    - `null`: Represents the intentional absence of any object value.
+ *    - `boolean`: Represents a logical entity and can have two values: `true` or `false`.
+ *    - `number`: Represents both integer and floating-point numbers.
+ *    - `bigint`: Represents integers with arbitrary precision.
+ *    - `string`: Represents a sequence of characters.
+ *    - `symbol`: Represents a unique and immutable value, often used as object keys.
+ *
+ * 2. **Non-Primitive (Reference) Data Types**:
+ *    - `object`: Represents collections of key-value pairs or more complex entities.
+ *      - Examples: Arrays, Functions, Dates, etc.
+ *
+ * Note:
+ * - Variables in JavaScript are not directly associated with any particular data type.
+ * - The `typeof` operator can be used to determine the type of a variable.
+ */
+
 //This is an alert
 //Single Line Comment
 /*
@@ -5,16 +28,21 @@ Multi Line Comment
 JS Introduction
 */
 //dynamically typed language
-//variables - 8 bytes
+//variables (var, let, const ) - 8 bytes
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 let score = 0; //initialization
 
 //assignment
 // score = 10.5 //1010
 // score = 'no score'
 
-const pi = 3.14;
-
 //console.log("score is " + score);
+
+const pi = 3.14; //constant - cannot be changed
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /*
 Operators
@@ -28,9 +56,18 @@ Bitwise Operators: &  |  ~  ^  <<  >> >>>
 
 */
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 //user input
-// let name = prompt("whats your name?")
+
+// let name = prompt("whats your name?") //prompt - takes input from user
 // console.log('hi ',name)
+
+/* 
+The purpose of Number() in this code is to explicitly convert the value of tickets into a number. 
+This is important because tickets might be a string (e.g., if it was retrieved from user input like a 
+form or prompt). Without this conversion, the multiplication (* 20) might not work as intended. 
+*/
 
 // let tickets = prompt('how many tickets do you want?')
 // console.log("you should pay ", Number(tickets)*20)
@@ -38,13 +75,14 @@ Bitwise Operators: &  |  ~  ^  <<  >> >>>
 // let a = prompt("Enter a number")
 // console.log(Number(a)+10)
 
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 //String - Group of Characters
 
 let str1 = "Strive not to be a success, ";
 let str2 = "but rather to be a value";
 
-/*
-Partitioning String
+/*Partitioning String
 
 slice(start, end)
 substring(start, end)
@@ -54,34 +92,36 @@ substr(start, length)
 // Template Literals
 // Introduced in 2015 with ECMAScript6 or ES6
 
-let firstName = "Ramya";
-let lastName = "Murali";
-let city = "Chennai";
+let firstName = "Mohamed";
+let lastName = "Inthikhaff";
+let city = "Sainthamaruthu";
 
 console.log(firstName + " " + lastName + " lives in " + city);
 
 //string interpolation
-console.log(`${firstName} ${lastName} lives in ${city}`);
+console.log(`${firstName} ${lastName} lives in ${city}`); //${variable} - string interpolation
 
 //multiline string
 
 let msg = `happy
 birthday`;
 
-console.log(msg)
+console.log(msg);
 
 //single and double quotes in string
 msg = "cat's name is toto";
 
 msg = `cat's name is "toto"`;
 
-console.log(msg)
+console.log(msg);
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //arrays
 let num = 10;
-let name = "vidhya";
+let name = "inthikhaff";
 
-let cities = ["Chennai", "Madurai", "Trichy"];
+let cities = ["Sainthamaruthu", "Kalmunai", "Sri Lanka"];
 
 let marks = [78, 56, 67, 54, 98];
 
@@ -173,11 +213,11 @@ console.log(arr3);
 let firstArr = [1, 2, 3];
 let secondArr = [4, 5, 6];
 
-let joinedArr = [firstArr,secondArr]
-console.log(joinedArr)
+let joinedArr = [firstArr, secondArr];
+console.log(joinedArr);
 
-joinedArr = firstArr.concat(secondArr)
-console.log(joinedArr)
+joinedArr = firstArr.concat(secondArr);
+console.log(joinedArr);
 
-let joined = [...firstArr,...secondArr]
-console.log(joined)
+let joined = [...firstArr, ...secondArr];
+console.log(joined);
